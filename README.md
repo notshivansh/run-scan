@@ -4,7 +4,7 @@
 ### Example usage
 
 ```yaml
-- uses: akto-api-security/run-scan@v1.0.2
+- uses: akto-api-security/run-scan@v1.0.3
     with:
       AKTO_DASHBOARD_URL: ${{secrets.AKTO_DASHBOARD_URL}}
       AKTO_API_KEY: ${{secrets.AKTO_API_KEY}}
