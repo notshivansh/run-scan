@@ -1,14 +1,24 @@
 name: 'Akto CI/CD'
-description: 'Run akto in ci/cd'
+description: 'Secure your APIs using Akto scan in your GitHub workflow'
+author: 'Akto'
+
 inputs:
   AKTO_DASHBOARD_URL:  
     required: true
+    description: 'URL of your Akto dashboard. Note that this should be whitelisted from your VPC for GitHub to access'
   AKTO_API_KEY:  
     required: true
+    description: 'Akto API Key for CI/CD Integration'
   AKTO_TEST_ID:  
     required: true
+    description: 'Id of the test that you want to run'
   START_TIME_DELAY:
     required: false
+    description: 'You can add a delay of N seconds before Akto starts testing your APIs. Please put the value more than the time it takes your API server to boot up and initialize'  
 runs:
   using: 'node16'
   main: 'index.js'
+  
+branding:
+  icon: 'play'
+  color: 'purple'
