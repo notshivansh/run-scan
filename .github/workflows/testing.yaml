@@ -1,0 +1,21 @@
+name: Testing
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        required: false  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run CI/CD tests
+        uses: notshivansh/run-scan@v1.0.0
+        with:
+          AKTO_DASHBOARD_URL: ${{vars.AKTO_DASHBOARD_URL}}
+          AKTO_API_KEY: ${{vars.AKTO_API_KEY}}
+          AKTO_TEST_ID: ${{vars.AKTO_TEST_ID}}
+          START_TIME_DELAY: 10
