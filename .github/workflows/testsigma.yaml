@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
         testPlanId:
-          default: "208"
+          default: "361"
       
 jobs:
   build:
